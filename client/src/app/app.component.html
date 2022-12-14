@@ -1,0 +1,19 @@
+<div>
+  <form>
+    <form class="form-container" [formGroup]="demoForm">
+      <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputEmail1" [formControl]="task1" placeholder="task">
+      </div>
+      <div class="form-group">
+        <select [formControl]="team1" >
+          <option selected="" disabled value="">please select team</option>s
+          <option *ngFor="let item of teams; index as i;" value={{item.id}}> {{item.team_name}}
+          </option>
+        </select>
+      </div>
+      
+      <button type='button' class="btn btn-success btn-block" (click)="assigntask()">Submit</button>
+  </form>
+</form>
+</div>
+<router-outlet></router-outlet>
